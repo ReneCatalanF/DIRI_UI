@@ -1,0 +1,40 @@
+import { JSX } from "react";
+import { Description, Dialog, DialogPanel, DialogTitle } from
+    "@headlessui/react";
+import { MenuItem } from "../entites/entities";
+interface ModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    itemM: MenuItem | undefined;
+}
+function ModalFinal(props: ModalProps): JSX.Element {
+    return (
+        <Dialog
+            open={props.isOpen}
+            onClose={props.onClose}
+            className="bg-gray-900 bg-opacity-50 fixed inset-0 z-10 flex items-center justify-center"
+        >
+            <DialogPanel className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full">
+                <DialogTitle className="text-lg font-semibold text-gray-900">{props.itemM?.name}</DialogTitle>
+                <Description className="mt-2 text-gray-600">
+                    {props.itemM?.desc}
+                </Description>
+                <p className="mt-4 text-sm text-gray-700">
+                    Precio por cada una: {props.itemM?.price}$
+                </p>
+                <p className="mt-4 text-sm text-gray-700">
+                    Quedan en total: {props.itemM?.quantity}
+                </p>
+                <div className="mt-6 flex justify-end">
+                    <button
+                        onClick={props.onClose}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700"
+                    >
+                        Cerra
+                    </button>
+                </div>
+            </DialogPanel>
+        </Dialog>
+    );
+}
+export default ModalFinal;
