@@ -5,6 +5,7 @@ import ima from '../images/Hamburg.jpg';
 import { useState } from 'react';
 import ErrorBoundary from '../services/ErrorBoundaries'
 import logger from '../services/logging';
+import { FormattedMessage, FormattedNumber } from 'react-intl';
 
 interface FoodsProps {
     foodItems: MenuItem[];
@@ -28,7 +29,7 @@ function Foods(props: FoodsProps) {
         <>
             {!foodOrder && (
                 <>
-                    <h4 className="foodTitle">Choose from our Menu</h4>
+                    <h4 className="foodTitle"><FormattedMessage id="app.label.chose" /></h4>
                     <br/>
                     <br/>
                     <ul className="space-y-10 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -49,7 +50,7 @@ function Foods(props: FoodsProps) {
                                                 {item.desc}
                                             </p>
                                             <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                                                {item.price}$
+                                                <FormattedNumber value={item.price} style="currency" currency="EUR" />
                                             </h5>
                                         </div>
                                         <div className="p-6 pt-0">
@@ -57,7 +58,7 @@ function Foods(props: FoodsProps) {
                                             font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all 
                                             hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] 
                                             active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" onClick={() => handleClick(item)}>
-                                                Pedir
+                                                <FormattedMessage id="app.label.order" />
                                             </button>
                                         </div>
                                     </div>
@@ -70,7 +71,7 @@ function Foods(props: FoodsProps) {
             )
             }
             {foodOrder &&
-                <ErrorBoundary fallback={<div>¡No nos quedan de esas hamburguesas!</div>}><FoodOrder food={foodSelect!} onReturnToMenu={handleReturnToMenu}></FoodOrder></ErrorBoundary>
+                <ErrorBoundary fallback={<div><FormattedMessage id="app.label.noMoreH" /></div>}><FoodOrder food={foodSelect!} onReturnToMenu={handleReturnToMenu}></FoodOrder></ErrorBoundary>
 
 
             }

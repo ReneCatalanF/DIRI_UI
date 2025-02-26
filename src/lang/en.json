@@ -1,0 +1,15 @@
+{
+    "app.label.language": "Language",
+    "app.label.title": "Fast Food Online",
+    "app.label.menu": "Menu",
+    "app.label.dispo": "Availability",
+    "app.label.orderFood": "Order Food",
+    "app.label.date": "Date",
+    "app.label.details": "Details",
+    "app.label.chose": "Chose from our Menu",
+    "app.label.order": "Order",
+    "app.label.priceperH": "Price for each one",
+    "app.label.totalquantity": "Total quantity",
+    "app.label.close": "Close",
+    "app.label.noMoreH": "¡We don't have more Burguers!"
+}

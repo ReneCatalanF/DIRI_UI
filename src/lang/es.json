@@ -1,0 +1,15 @@
+{
+    "app.label.language": "Idioma",
+    "app.label.title": "Comida Rápida Online",
+    "app.label.menu": "Menú",
+    "app.label.dispo": "Disponibilidad",
+    "app.label.orderFood": "Pedir Comida",
+    "app.label.date": "Fecha",
+    "app.label.details": "Ver detalle",
+    "app.label.chose": "Elige desde nuestro menú",
+    "app.label.order": "Pedir",
+    "app.label.priceperH": "Precio por cada una",
+    "app.label.totalquantity": "Quedan en total",
+    "app.label.close": "Cerrar",
+    "app.label.noMoreH": "¡No nos quedan de esas hamburguesas!"
+}
